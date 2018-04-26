@@ -1,21 +1,5 @@
 <?php
 
-  function iterativeCategoryTree(array $elements) {
-    $stack = $elements;
-    echo "<ul>";
-    while(count($stack)) {
-      $category = array_shift($stack[count($stack) - 1]);
-      echo "<li>" . $category['name'] . "</li>";
-      var_dump($stack[count($stack) - 1]);
-
-      $stack[] = $category['children'];
-      while($count($stack) && count($stack[count($stack) - 1]) == 0) {
-        echo "</ul>";
-        array_pop($stack);
-      }
-    }
-  }
-
   function recursiveCategoryTree(array $elements, $parent_id = 0) {
     $branch = [];
 
